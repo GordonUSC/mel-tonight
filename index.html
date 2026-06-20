@@ -269,6 +269,93 @@ body.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
+<!-- MAP + ASK DARBY + CROSS-LINK -->
+<style>
+.dq-sec{padding:64px 0;border-top:1px solid var(--line)}
+.dq-k{font-family:var(--sans);letter-spacing:.26em;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:8px}
+.dq-h{font-style:italic;font-weight:600;font-size:clamp(26px,5vw,40px);margin:.05em 0 .5em;letter-spacing:-.01em}
+.dq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.dq-card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.dq-card iframe{width:100%;height:158px;border:0;display:block;filter:grayscale(.25) contrast(1.05)}
+.dq-card .m{padding:13px 15px;font-family:var(--sans)}
+.dq-card .m .t{font-size:15px;color:var(--cream);font-weight:600}
+.dq-card .m .s{font-size:12.5px;color:var(--mut);margin:3px 0 9px}
+.dq-card .m a{font-size:12px;letter-spacing:.04em;color:var(--gold);text-decoration:none}
+@media(max-width:620px){.dq-grid{grid-template-columns:1fr}}
+.dq-ask{margin-top:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;padding:20px}
+.dq-row{display:flex;gap:8px}
+.dq-row input{flex:1;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:var(--cream);font-family:var(--sans);font-size:15px}
+.dq-row input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.dq-row button{background:var(--gold);color:#120a14;border:0;border-radius:12px;padding:0 18px;font-family:var(--sans);font-weight:700;cursor:pointer;font-size:14px}
+.dq-chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px}
+.dq-chip{font-family:var(--sans);font-size:12.5px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;background:transparent}
+.dq-chip:hover{color:var(--cream);border-color:var(--gold)}
+.dq-ans{margin-top:15px;font-family:var(--sans);font-size:15.5px;line-height:1.55;color:var(--cream)}
+.dq-ans .by{color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:5px}
+.dq-cross{margin-top:26px;display:block;font-family:var(--sans)}
+.dq-cross a{font-size:17px;color:var(--rose);text-decoration:none;border-bottom:1px solid var(--rose);padding-bottom:3px}
+</style>
+
+<section class="dq-sec">
+  <div class="wrap">
+    <div class="dq-k">The day · key locations</div>
+    <h2 class="dq-h">Where it all happens.</h2>
+    <div class="dq-grid">
+      <div class="dq-card"><iframe loading="lazy" title="The Show" src="https://maps.google.com/maps?q=Los%20Angeles%20State%20Historic%20Park%2C%201245%20N%20Spring%20St%2C%20Los%20Angeles%20CA%2090012&z=13&output=embed"></iframe><div class="m"><div class="t">The Show · LA State Historic Park</div><div class="s">1245 N Spring St · doors 5pm</div><a href="https://www.google.com/maps/search/?api=1&query=Los%20Angeles%20State%20Historic%20Park%201245%20N%20Spring%20St%2090012" target="_blank" rel="noopener">Open in Maps →</a></div></div>
+      <div class="dq-card"><iframe loading="lazy" title="Lunch" src="https://maps.google.com/maps?q=Tacos%20El%20Tijuanense%2C%209034%20Woodley%20Ave%2C%20North%20Hills%20CA%2091343&z=14&output=embed"></iframe><div class="m"><div class="t">Lunch · Tacos El Tijuanense</div><div class="s">9034 Woodley Ave, North Hills · quick + delicious</div><a href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Tijuanense%209034%20Woodley%20Ave%20North%20Hills" target="_blank" rel="noopener">Open in Maps →</a></div></div>
+      <div class="dq-card"><iframe loading="lazy" title="Home base" src="https://maps.google.com/maps?q=North%20Hills%2C%20Los%20Angeles%2C%20CA&z=12&output=embed"></iframe><div class="m"><div class="t">Home base · North Hills</div><div class="s">Where the day starts</div><a href="https://www.google.com/maps/search/?api=1&query=North%20Hills%20Los%20Angeles%20CA" target="_blank" rel="noopener">Open in Maps →</a></div></div>
+      <div class="dq-card"><iframe loading="lazy" title="Downey" src="https://maps.google.com/maps?q=Downey%2C%20CA&z=12&output=embed"></iframe><div class="m"><div class="t">Downey · the friends</div><div class="s">~30–40 min SE of the park</div><a href="https://www.google.com/maps/search/?api=1&query=Downey%20CA" target="_blank" rel="noopener">Open in Maps →</a></div></div>
+    </div>
+
+    <div style="margin-top:46px">
+      <div class="dq-k">Ask me anything</div>
+      <h2 class="dq-h">I'm right here all night.</h2>
+      <div class="dq-ask">
+        <form class="dq-row" id="dqForm" autocomplete="off">
+          <input id="dqIn" placeholder="Ask about set times, the artists, lunch, parking…" aria-label="Ask Darby a question">
+          <button type="submit">Ask</button>
+        </form>
+        <div class="dq-chips" id="dqChips"></div>
+        <div class="dq-ans" id="dqAns"></div>
+      </div>
+    </div>
+
+    <div class="dq-cross">💛 <a href="https://gordonusc.github.io/drake-bday/">Drake has a page too. Go see his →</a></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var KB=[
+    {k:['set time','sets','lineup','who is play','whos play','who play','playing','order','schedule','slot'],a:"The night builds: gates and golden hour, then Hot Since 82, then Clüb de Combat, then Chris Lake headlines. Exact set times aren't posted, so trust your feet."},
+    {k:['hot since','82','daley','padley','deep house','knee deep'],a:"Hot Since 82 (Daley Padley) is the deep-house storyteller. He plays the slow burn, builds a groove and lets it breathe. His label is Knee Deep In Sound."},
+    {k:['combat','club de','clüb','fight'],a:"Clüb de Combat is Chris Lake's harder, warehouse-leaning party world (French for 'fight club'), tied to his single 'Make You Fight.' It's the adrenaline peak of the night."},
+    {k:['chris lake','lake','headlin','black book','operator','turn off'],a:"Chris Lake headlines. Founder of Black Book Records, 'Operator,' 'Turn Off The Lights,' Anti Up with Chris Lorenzo. Tonight is his biggest LA show ever, 20,000 people."},
+    {k:['door','start','when','begin','open','curfew','end','over','time'],a:"Doors are at 5:00 PM, curfew is 11:00 PM. Get there early so you don't miss the openers."},
+    {k:['age','18','id','identif'],a:"It's 18+. Bring a physical ID, they check at the gate."},
+    {k:['where','venue','address','location'],a:"Los Angeles State Historic Park, 1245 N Spring St, right by Chinatown and the Metro A (Gold) Line. It's on the map above."},
+    {k:['park','metro','drive','get there','ride','uber','lyft','transport'],a:"Parking near the park fills fast. Easiest is the Metro A Line to Chinatown station, or rideshare to Spring St. Plan the ride home before curfew."},
+    {k:['lunch','eat','food','hungry','dinner','taco','restaurant'],a:"Quick and delicious: Tacos El Tijuanense (9034 Woodley Ave, North Hills). Want a feast? Martín Fierro Asados, Argentine asado in North Hills. Both pinned on the map."},
+    {k:['downey','friend'],a:"Downey is on the map, southeast of downtown, about 30 to 40 minutes from the park. Easy to fold your Downey friends into the night."},
+    {k:['water','hydrate','drink','thirst'],a:"Hydrate all day and refill at the water stations inside. Future you, dancing at 10pm, will thank you."},
+    {k:['wear','outfit','clothes','shoe','dress','layer'],a:"Comfy shoes you can dance in, and a layer for when the sun drops. June days are warm, the night gets cool."},
+    {k:['weather','rain','hot','temperature','cold'],a:"Typical June LA: warm afternoon, cool evening. No rain expected, but bring a light layer for after dark."},
+    {k:['drake','husband','birthday','bday'],a:"Drake has his own page tonight, it's his birthday! Tap the link just below. 🎂"},
+    {k:['love','miss you',' xo','heart'],a:"You and Drake taught the rest of us that the dancefloor is sacred. Go love each other out there."},
+    {k:['darby','who are you','what are you',' ai ','bot','assistant'],a:"I'm Darby, Gordon's AI. I made this little page for you and I'm here all night if you have questions."},
+    {k:['gordon','find gordon'],a:"Gordon's around and cannot wait to see you. Text him if you need him."}
+  ];
+  var FALLBACK="I don't have that one yet. Try the artists, the set order, doors, lunch, parking, Downey, or what to wear. For anything else, just find Gordon.";
+  var CHIPS=["Who's playing and when?","What time are doors?","Where do I park?","Lunch ideas?","What should I wear?"];
+  var form=document.getElementById('dqForm'),inp=document.getElementById('dqIn'),ans=document.getElementById('dqAns'),chips=document.getElementById('dqChips');
+  CHIPS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='dq-chip';b.textContent=c;b.onclick=function(){inp.value=c;answer();};chips.appendChild(b);});
+  function answer(){var q=(' '+(inp.value||'').toLowerCase().trim()+' ');if(!q.trim())return;var best=null,score=0;
+    KB.forEach(function(e){var s=0;e.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>score){score=s;best=e;}});
+    ans.innerHTML='<span class="by">Darby</span>'+(best?best.a:FALLBACK);}
+  form.addEventListener('submit',function(e){e.preventDefault();answer();});
+})();
+</script>
+
 <footer>
   <div class="wrap">
     Made with love for Melanie · June 20, 2026 · Facts verified against public sources
