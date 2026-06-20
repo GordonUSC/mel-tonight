@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Melanie · Tonight Under the LA Sky · June 20, 2026</title>
+<meta name="description" content="A loving dossier for Mel: Hot Since 82, Clüb de Combat, and Chris Lake.">
+<style>
+/* A bespoke after-dark concert program for Melanie. Immersive, warm, hers. */
+:root{
+  --night:#080711; --night2:#0e0c1c; --panel:#141228; --line:#272348;
+  --cream:#f4eee6; --mut:#a79fc0;
+  --gold:#e9b949;     /* Hot Since 82 — deep house warmth */
+  --crimson:#ec3b56;  /* Clüb de Combat — fight club */
+  --cyan:#49d6e9;     /* Chris Lake — Black Book electric */
+  --rose:#ff7eb6;
+  --serif:"Hoefler Text","Iowan Old Style",Palatino,Georgia,serif;
+  --sans:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--cream);font-family:var(--serif);font-size:18px;line-height:1.66;
+  background:
+   radial-gradient(1100px 700px at 78% -8%, rgba(73,214,233,.10), transparent 60%),
+   radial-gradient(900px 600px at 8% 6%, rgba(236,59,86,.10), transparent 58%),
+   radial-gradient(900px 800px at 50% 110%, rgba(233,185,73,.08), transparent 60%),
+   var(--night);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+/* film grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:880px;margin:0 auto;padding:0 26px}
+a{color:var(--cyan)}
+img{max-width:100%;display:block}
+
+/* COVER */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.cover .sky{position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:.34;filter:saturate(1.1) contrast(1.05);
+  mask-image:linear-gradient(180deg,transparent,#000 30%,#000 60%,transparent)}
+.cover .inner{position:relative;z-index:2;padding:60px 0}
+.eyebrow{font-family:var(--sans);letter-spacing:.42em;text-transform:uppercase;font-size:12px;color:var(--gold)}
+.cover h1{font-size:clamp(52px,12vw,116px);line-height:.92;margin:.14em 0 .1em;letter-spacing:-.02em;
+  font-weight:600;font-style:italic}
+.cover .for{font-family:var(--sans);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.cover .for b{color:var(--rose);letter-spacing:.3em}
+.cover .meta{margin-top:30px;font-family:var(--sans);font-size:14px;letter-spacing:.06em;color:var(--cream);line-height:2}
+.cover .meta .dot{color:var(--cyan)}
+.scroll-cue{margin-top:40px;font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(6px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.scroll-cue{animation:none}}
+
+/* section scaffolding */
+section{padding:74px 0;position:relative}
+.kick{font-family:var(--sans);letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
+.section-title{font-size:clamp(30px,5vw,46px);line-height:1.04;font-style:italic;font-weight:600;letter-spacing:-.01em;margin:.1em 0 .5em}
+.lede{color:var(--cream);font-size:19px}
+.muted{color:var(--mut)}
+hr.div{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:8px 0 0}
+
+/* program / run of night */
+.program{background:linear-gradient(180deg,var(--night2),transparent)}
+.bill{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 8px}
+.bill .b{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center}
+.bill .b .t{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.bill .b .v{font-size:20px;margin-top:6px;font-style:italic}
+@media(max-width:640px){.bill{grid-template-columns:repeat(2,1fr)}}
+.arc{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px;font-family:var(--sans);font-size:14px}
+.arc .step{padding:9px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02)}
+.arc .step.h{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 24px -8px var(--cyan)}
+.arc .sep{color:var(--mut)}
+
+/* artist spread */
+.artist{border-top:1px solid var(--line)}
+.atop{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.idx{font-family:var(--sans);font-weight:800;font-size:13px;letter-spacing:.1em;
+  -webkit-text-stroke:1px currentColor;color:transparent}
+.artist h2{font-size:clamp(38px,8vw,76px);line-height:.9;margin:.12em 0 .1em;letter-spacing:-.02em;font-weight:600}
+.real{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.figure{margin:24px 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;box-shadow:0 30px 80px -40px #000}
+.figure img{width:100%;display:block;filter:saturate(1.05)}
+.figure .cap{font-family:var(--sans);font-size:11.5px;letter-spacing:.04em;color:var(--mut);padding:9px 14px;background:var(--night2)}
+.cols{display:grid;grid-template-columns:1.55fr 1fr;gap:30px;align-items:start;margin-top:14px}
+@media(max-width:720px){.cols{grid-template-columns:1fr;gap:18px}}
+.facts{list-style:none;margin:0;padding:0;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.facts li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.facts li .y{color:var(--mut);min-width:60px;font-variant-numeric:tabular-nums}
+.listen{margin-top:18px;border-radius:14px;padding:16px 18px;font-family:var(--sans);font-size:14.5px}
+.listen .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:5px}
+
+/* accent theming per artist */
+.a-gold .idx,.a-gold .kick{color:var(--gold)} .a-gold h2{color:#fff} .a-gold .glow{color:var(--gold)}
+.a-gold .listen{background:linear-gradient(135deg,rgba(233,185,73,.14),transparent);border:1px solid rgba(233,185,73,.4)} .a-gold .listen .l{color:var(--gold)}
+.a-crim .idx,.a-crim .kick{color:var(--crimson)} .a-crim h2{color:#fff} .a-crim .glow{color:var(--crimson)}
+.a-crim .listen{background:linear-gradient(135deg,rgba(236,59,86,.14),transparent);border:1px solid rgba(236,59,86,.42)} .a-crim .listen .l{color:var(--crimson)}
+.a-cyan .idx,.a-cyan .kick{color:var(--cyan)} .a-cyan h2{color:#fff} .a-cyan .glow{color:var(--cyan)}
+.a-cyan .listen{background:linear-gradient(135deg,rgba(73,214,233,.13),transparent);border:1px solid rgba(73,214,233,.42)} .a-cyan .listen .l{color:var(--cyan)}
+
+/* combat motif when no photo */
+.combat{height:240px;border-radius:16px;border:1px solid rgba(236,59,86,.4);position:relative;overflow:hidden;
+  background:radial-gradient(120% 120% at 30% 20%,rgba(236,59,86,.34),transparent 55%),
+   radial-gradient(120% 120% at 80% 90%,rgba(255,126,182,.22),transparent 55%),#0c0913}
+.combat .x{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--sans);
+  font-weight:800;font-size:clamp(34px,9vw,84px);letter-spacing:.12em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18)}
+.combat .scan{position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 6px,rgba(0,0,0,.18) 6px 7px);mix-blend-mode:overlay}
+
+/* love note */
+.love{background:linear-gradient(180deg,transparent,rgba(255,126,182,.06));border-top:1px solid var(--line)}
+.love .card{background:linear-gradient(135deg,rgba(255,126,182,.10),rgba(73,214,233,.06));
+  border:1px solid var(--line);border-radius:20px;padding:34px 30px;box-shadow:0 40px 100px -50px #000}
+.love h2{font-style:italic;font-weight:600;font-size:clamp(28px,5vw,40px);margin:.1em 0 .4em}
+.love p{font-size:18.5px;margin:.7em 0}
+.sign{font-family:var(--sans);letter-spacing:.06em;color:var(--mut);margin-top:18px}
+.sign b{color:var(--rose)}
+
+footer{padding:40px 0 70px;color:var(--mut);font-family:var(--sans);font-size:12px;letter-spacing:.04em;border-top:1px solid var(--line)}
+footer a{color:var(--mut)}
+.reveal{opacity:1;transform:none}
+body.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+body.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){body.js .reveal{opacity:1;transform:none}}
+::selection{background:var(--rose);color:#1a0d14}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<header class="cover">
+  <div class="sky" style="background-image:url('img/laskyline.jpg')"></div>
+  <div class="wrap inner">
+    <div class="eyebrow">Tonight, under the LA sky</div>
+    <h1>The Field<br>Guide.</h1>
+    <div class="for">A loving dossier for <b>Melanie</b></div>
+    <div class="meta">
+      Chris Lake <span class="dot">·</span> Hot Since 82 <span class="dot">·</span> Clüb de Combat<br>
+      Los Angeles State Historic Park <span class="dot">·</span> Saturday, June 20, 2026<br>
+      <span class="muted">And it&rsquo;s Drake&rsquo;s birthday. Of course it is.</span>
+    </div>
+    <div class="scroll-cue">scroll ↓ before the doors open</div>
+  </div>
+</header>
+
+<!-- PROGRAM -->
+<section class="program">
+  <div class="wrap reveal">
+    <div class="kick" style="color:var(--cyan)">The night, at a glance</div>
+    <h2 class="section-title">One park. Twenty thousand people. The biggest LA show he&rsquo;s ever thrown.</h2>
+    <p class="lede muted">Chris Lake sold out his first LA State Historic Park date so fast he added a second. Presented by Goldenvoice and Framework, this is house music as a stadium act, outdoors, downtown skyline behind the stage. Here is everything you need so you can stop checking your phone and just dance.</p>
+    <div class="bill">
+      <div class="b"><div class="t">Doors</div><div class="v">5:00 PM</div></div>
+      <div class="b"><div class="t">Curfew</div><div class="v">11:00 PM</div></div>
+      <div class="b"><div class="t">Ages</div><div class="v">18 +</div></div>
+      <div class="b"><div class="t">Capacity</div><div class="v">~20,000</div></div>
+    </div>
+    <p class="muted" style="font-family:var(--sans);font-size:14px">How the night tends to build, so you know who you&rsquo;re hearing:</p>
+    <div class="arc">
+      <span class="step">Gates &amp; golden hour</span><span class="sep">→</span>
+      <span class="step" style="border-color:var(--gold);color:var(--gold)">Hot Since 82</span><span class="sep">→</span>
+      <span class="step" style="border-color:var(--crimson);color:var(--crimson)">Clüb de Combat</span><span class="sep">→</span>
+      <span class="step h">Chris Lake, headline</span>
+    </div>
+    <p class="muted" style="font-size:13.5px;font-family:var(--sans);margin-top:14px">(Set times aren&rsquo;t posted in advance, so that&rsquo;s the shape of the evening, not a clock. Trust your feet.)</p>
+  </div>
+</section>
+
+<!-- HOT SINCE 82 -->
+<section class="artist a-gold">
+  <div class="wrap reveal">
+    <div class="atop"><span class="idx">01</span><span class="kick">The deep-house storyteller</span></div>
+    <h2>Hot Since 82</h2>
+    <div class="real">Daley Padley · Barnsley, South Yorkshire, England</div>
+    <div class="combat" aria-hidden="true" style="border-color:rgba(233,185,73,.4);background:radial-gradient(120% 120% at 25% 25%,rgba(233,185,73,.30),transparent 55%),radial-gradient(120% 120% at 85% 85%,rgba(236,59,86,.14),transparent 55%),#0e0a07">
+      <div class="scan"></div>
+      <div class="x" style="-webkit-text-stroke-color:rgba(233,185,73,.32);font-style:italic;font-weight:600;letter-spacing:.02em">Knee Deep</div>
+    </div>
+    <div class="cols">
+      <div>
+        <p>He plays the long game, literally. Daley grew up on the Athersley South estate near Barnsley and started spinning marathon Sunday sets as a teenager. By 2006 he had a residency at Cream in Ibiza. The Hot Since 82 name arrived in 2011 with <em class="glow">&ldquo;Let It Ride,&rdquo;</em> which shot to number three on Beatport&rsquo;s deep house chart out of nowhere.</p>
+        <p>His genius is patience. Where others drop the hammer, he builds a groove and lets it breathe for ten minutes until the whole field is moving as one body. That&rsquo;s the Shambhala feeling you and Drake chase every year, and it&rsquo;s exactly what he does in daylight.</p>
+        <div class="listen">
+          <span class="l">What to listen for tonight</span>
+          The slow burn. He won&rsquo;t rush you. When a bassline finally turns over after a long tease, that&rsquo;s the moment. His own label <strong>Knee Deep In Sound</strong> is the sound of underground house done with real warmth.
+        </div>
+      </div>
+      <ul class="facts">
+        <li><span class="y">2006</span> Residency at Cream, Ibiza</li>
+        <li><span class="y">2011</span> &ldquo;Let It Ride&rdquo; · #3 Beatport deep house</li>
+        <li><span class="y">2013</span> Remix of Green Velvet&rsquo;s &ldquo;Bigger Than Prince&rdquo; · #1</li>
+        <li><span class="y">2014</span> Founds <strong>Knee Deep In Sound</strong></li>
+        <li><span class="y">2026</span> New album &ldquo;Obsessions,&rdquo; single &ldquo;Shaded&rdquo;</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CLUB DE COMBAT -->
+<section class="artist a-crim">
+  <div class="wrap reveal">
+    <div class="atop"><span class="idx">02</span><span class="kick">The room they&rsquo;ve built tonight</span></div>
+    <h2>Clüb de Combat</h2>
+    <div class="real">Chris Lake&rsquo;s harder world · French for &ldquo;fight club&rdquo;</div>
+    <div class="combat" aria-hidden="true">
+      <div class="scan"></div>
+      <div class="x">COMBAT</div>
+    </div>
+    <div class="cols">
+      <div>
+        <p>This isn&rsquo;t a stranger on the bill, it&rsquo;s the banner the whole night flies under. Chris Lake throws his parties as worlds with names: Club Glow, Club Darc, and this year&rsquo;s touring concept, <em class="glow">Clüb de Combat</em>. The name is the warning label. It&rsquo;s his harder, faster, warehouse-leaning side, the sound tied to his thumping 2026 single <em class="glow">&ldquo;Make You Fight&rdquo;</em> with ATRIP.</p>
+        <p>So when the energy in the park tips from groove to genuine fight-or-flight adrenaline, that&rsquo;s Combat. It&rsquo;s the part of the night that earns the recovery day after.</p>
+        <div class="listen">
+          <span class="l">What to listen for tonight</span>
+          Heavier kicks, fewer vocals, more menace. If Hot Since 82 is the long exhale, Clüb de Combat is the part where you and the crew look at each other and just go.
+        </div>
+      </div>
+      <ul class="facts">
+        <li><span class="y">Idea</span> Chris Lake&rsquo;s named party-worlds</li>
+        <li><span class="y">2026</span> The touring concept on this run</li>
+        <li><span class="y">Sound</span> Harder, club-forward, warehouse</li>
+        <li><span class="y">Anthem</span> &ldquo;Make You Fight&rdquo; w/ ATRIP</li>
+        <li><span class="y">Vibe</span> The night&rsquo;s adrenaline peak</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CHRIS LAKE -->
+<section class="artist a-cyan">
+  <div class="wrap reveal">
+    <div class="atop"><span class="idx">03</span><span class="kick">The headliner · the whole reason</span></div>
+    <h2>Chris Lake</h2>
+    <div class="real">Norwich, England → Los Angeles · founder of Black Book Records</div>
+    <div class="figure">
+      <img src="img/chrislake.jpg" alt="Chris Lake performing behind the decks">
+      <div class="cap">Chris Lake at the controls. Photo: Wikimedia Commons.</div>
+    </div>
+    <div class="cols">
+      <div>
+        <p>Twenty years deep, and he built it his way. Chris broke through in 2006 with <em class="glow">&ldquo;Changes,&rdquo;</em> moved to LA in 2010, and in 2016 started <strong>Black Book Records</strong> so he could own his own sound. Then came the tracks that became the canon: <em class="glow">&ldquo;Operator&rdquo;</em> in 2017, <em class="glow">&ldquo;Turn Off The Lights&rdquo;</em> in 2018, and as one half of <strong>Anti Up</strong> with Chris Lorenzo, a Coachella closing set.</p>
+        <p>Black Book&rsquo;s live shows have sold more than 300,000 tickets across North America, the Brooklyn Mirage, Space Miami, Denver&rsquo;s Mission Ballroom. Tonight, in a downtown LA park for twenty thousand people, is the biggest standalone show he has ever headlined in this city. You&rsquo;re not at a concert. You&rsquo;re at a milestone.</p>
+        <div class="listen">
+          <span class="l">What to listen for tonight</span>
+          The drops everyone knows the words to, and the ones nobody&rsquo;s heard yet. He A&amp;Rs his own sets like an album. When the skyline lights up behind him during &ldquo;Turn Off The Lights,&rdquo; find Drake.
+        </div>
+      </div>
+      <ul class="facts">
+        <li><span class="y">2006</span> &ldquo;Changes&rdquo; feat. Laura V</li>
+        <li><span class="y">2010</span> Moves to Los Angeles</li>
+        <li><span class="y">2016</span> Founds <strong>Black Book Records</strong></li>
+        <li><span class="y">2017</span> &ldquo;Operator&rdquo;</li>
+        <li><span class="y">2018</span> &ldquo;Turn Off The Lights&rdquo;</li>
+        <li><span class="y">Now</span> Anti Up · 300K+ Black Book tickets</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LOVE NOTE -->
+<section class="love">
+  <div class="wrap reveal">
+    <div class="card">
+      <div class="kick" style="color:var(--rose)">One more thing, just for you</div>
+      <h2>Mel.</h2>
+      <p>You and Drake found each other in a Las Vegas crowd and never let go. Tonight the crowd is twenty thousand strong, the man you married is one year older, and the sky over downtown is yours.</p>
+      <p>You two are the ones who taught the rest of us that the dancefloor is a sacred place, never-miss, hard-commit, every single year. So this is just a little map so you never have to wonder who&rsquo;s playing. Now put the phone away. Hot Since 82 will take you up slow, Combat will take you somewhere louder, and when Chris Lake brings it home under the skyline, hold Drake and don&rsquo;t let the moment pass.</p>
+      <p>Happy birthday to our Drake. Dance like it&rsquo;s Shambhala.</p>
+      <div class="sign">With all my love, <b>Gordon</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Made with love for Melanie · June 20, 2026 · Facts verified against public sources
+    (<a href="https://en.wikipedia.org/wiki/Chris_Lake">Chris Lake</a>,
+    <a href="https://en.wikipedia.org/wiki/Hot_Since_82">Hot Since 82</a>,
+    AXS / RA event listings). Clüb de Combat described as Chris Lake&rsquo;s touring party concept.
+  </div>
+</footer>
+
+<script>
+document.body.classList.add('js');
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&'IntersectionObserver'in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>

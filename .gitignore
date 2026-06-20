@@ -1,0 +1,7 @@
+shot*.png
+full*.png
+_verify.html
+m*.png
+*.png
+.DS_Store
+!img/*
